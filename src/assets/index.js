@@ -1,6 +1,7 @@
 import logo from "./image.png";
 import backend from "./backend.png";
 import creator from "./creator.png";
+import headshot from "./headshot2.png"
 import mobile from "./mobile.png";
 import web from "./web.png";
 import github from "./github.png";
@@ -32,6 +33,7 @@ export {
   logo,
   backend,
   creator,
+  headshot,
   mobile,
   web,
   github,

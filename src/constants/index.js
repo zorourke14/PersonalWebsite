@@ -2,6 +2,7 @@ import {
     mobile,
     backend,
     creator,
+    headshot,
     web,
     javascript,
     typescript,
@@ -229,5 +230,5 @@ import {
     },
   ];
   
-  export { services, technologies, experiences, testimonials, projects };
+  export { services, technologies, experiences, testimonials, projects, headshot };
   

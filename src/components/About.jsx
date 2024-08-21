@@ -3,7 +3,7 @@ import { Tilt } from 'react-tilt';
 import { motion } from 'framer-motion';
 
 import { styles } from '../styles';
-import { services } from '../constants';
+import { services, headshot } from '../constants';
 import { fadeIn, textVariant } from '../utils/motion'
 import SectionWrapper from "../hoc/SectionWrapper";
 
@@ -56,13 +56,13 @@ In addition to my technical pursuits, I enjoy hiking, fishing, and experimenting
 I am excited about the opportunity to apply my diverse interests and skills to contribute to meaningful projects and collaborate with like-minded professionals in the tech industry.
       </motion.p>
 
-      <div className="mt-20 flex justify-center">
+      <motion.div variants={fadeIn("left", "spring", headshot * 0.5, 0.75)} className="mt-20 flex justify-center">
         <div className="w-80 h-80 rounded-full overflow-hidden">
-          <img src="src/assets/headshot2.png" alt="Profile" className="w-full h-full object-cover" />
+          <img src= {headshot} alt="Profile" className="w-full h-full object-cover" />
         </div>
-      </div>
+      </motion.div>
 
-      <div className = "mt-20 flex justify-center gap-10 ">
+      <div className = "mt-20 flex justify-center gap-10 sm: m-13">
         {services.map((service,index) => (
           <ServiceCard key = {service.title} index = 
           {index} { ...service } />
