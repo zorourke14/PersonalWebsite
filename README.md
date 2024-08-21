@@ -1,8 +1,13 @@
-# React + Vite
+# 3D Developer Portfolio
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Welcome to my 3D Developer Portfolio project! This portfolio showcases my skills in creating immersive and interactive web experiences using modern technologies. It features a variety of interactive and animated sections to demonstrate my expertise in web development and 3D graphics.
 
-Currently, two official plugins are available:
+## ⚙️ Tech Stack
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- **React.js**: For building dynamic user interfaces.
+- **Three.js**: For creating and rendering 3D graphics.
+- **React Three Fiber**: A React renderer for Three.js.
+- **React Three Drei**: Useful helpers for React Three Fiber.
+- **EmailJS**: For handling form submissions and sending emails.
+- **Vite**: For a fast development environment.
+- **Tailwind CSS**: For utility-first styling and responsive design.
