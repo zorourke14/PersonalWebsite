@@ -8,7 +8,7 @@ import { fadeIn, textVariant } from '../utils/motion'
 import SectionWrapper from "../hoc/SectionWrapper";
 
 const ServiceCard = ({ index, title, icon }) => (
-  <Tilt className='xs:w-[250px] w-full'>
+  <Tilt className='xs:w-[250px] w-full max-w-[350px]'>
     <motion.div
       variants={fadeIn("right", "spring", index * 0.5, 0.75)}
       className='w-full green-pink-gradient p-[1px] rounded-[20px] shadow-card'
@@ -62,7 +62,7 @@ I am excited about the opportunity to apply my diverse interests and skills to c
         </div>
       </motion.div>
 
-      <div className = "mt-20 flex justify-center gap-10 sm: m-13">
+      <div className = "mt-20 flex justify-center gap-10 sm:flex-row flex-wrap justify-center gap-10">
         {services.map((service,index) => (
           <ServiceCard key = {service.title} index = 
           {index} { ...service } />
