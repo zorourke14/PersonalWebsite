@@ -13,4 +13,5 @@ Welcome to my 3D Developer Portfolio project! This portfolio showcases my skills
 - **Tailwind CSS**: For utility-first styling and responsive design.
 
 ## Weblink
-- **Checkout my website:**: zack-orourke.com
+
+- **Checkout my website**: [zack-orourke.com](https://zack-orourke.com)
