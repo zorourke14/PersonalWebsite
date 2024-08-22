@@ -122,7 +122,7 @@ import {
       ],
     },
     {
-      title: "CryptoCurrency Mentored Researched",
+      title: "CryptoCurrency Mentored Research",
       company_name: "TCNJ",
       icon: tcnj,
       iconBg: "#E6DEDD",
