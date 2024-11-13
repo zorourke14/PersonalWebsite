@@ -6,8 +6,7 @@ import { styles } from "../styles";
 import { EarthCanvas } from "./canvas";
 import { SectionWrapper } from "../hoc";
 import { slideIn } from "../utils/motion";
-import config from '/config';
-
+import config from '../../config';
 
 const Contact = () => {
   const formRef = useRef();
@@ -35,6 +34,7 @@ const Contact = () => {
 
     emailjs
       .send(
+        '',
         config.EMAILJS_SERVICE_ID,
         config.EMAILJS_TEMPLATE_ID,
         {
