@@ -1,4 +1,5 @@
 import {
+    ai,
     mobile,
     backend,
     creator,
@@ -17,6 +18,7 @@ import {
     figma,
     docker,
     pseg,
+    tiffany,
     tcnj,
     goat,
     personalweb,
@@ -111,30 +113,17 @@ import {
   
   const experiences = [
     {
-      title: "Computer Science Tutor",
-      company_name: "TCNJ",
-      icon: tcnj,
-      iconBg: "#E6DEDD",
-      date: "August 2023 - Current",
+      title: "Cloud & Platform Engineer Intern",
+      company_name: "Tiffany & Co.",
+      icon: tiffany,
+      iconBg: "#97cacc",
+      date: "June 2025 - August 2025",
       points: [
-        "Facilitate the progress of 30 students during laboratory sessions, applying critical problem-solving skills during labs and projects.",
-        "Teach students object-oriented programming skills and hold private office hours outside of lab hours",
+        "To be completed",
       ],
     },
     {
-      title: "CryptoCurrency Mentored Research",
-      company_name: "TCNJ",
-      icon: tcnj,
-      iconBg: "#E6DEDD",
-      date: "August 2023 - Current",
-      points: [
-        "Researching crypto slashing for publication under Dr. Jikai Li’s guidance.",
-        "Implementing smart contracts with Solidity and extracting data from light nodes.",
-        "Analyzing blockchain data to enhance understanding of decentralized fnance mechanisms.",
-      ],
-    },
-    {
-      title: "Utility IT/SWE Intern",
+      title: "Software Engineer Intern",
       company_name: "PSEG",
       icon: pseg,
       iconBg: "#383E56",
@@ -146,6 +135,29 @@ import {
         "Troubleshoot incidents across multiple interfaces including SAP, Mulesoft, Kubra, EITK scripts.",
         "Implemented changes using ServiceNow in a production environment.",
         "Exposed to data from PowerBI and SCADA for OMS."
+      ],
+    },
+    {
+      title: "Computer Science Tutor",
+      company_name: "TCNJ",
+      icon: tcnj,
+      iconBg: "#E6DEDD",
+      date: "August 2023 - June 2024",
+      points: [
+        "Facilitate the progress of 30 students during laboratory sessions, applying critical problem-solving skills during labs and projects.",
+        "Teach students object-oriented programming skills and hold private office hours outside of lab hours",
+      ],
+    },
+    {
+      title: "CryptoCurrency Mentored Research",
+      company_name: "TCNJ",
+      icon: tcnj,
+      iconBg: "#E6DEDD",
+      date: "August 2023 - June 2024",
+      points: [
+        "Researching crypto slashing for publication under Dr. Jikai Li’s guidance.",
+        "Implementing smart contracts with Solidity and extracting data from light nodes.",
+        "Analyzing blockchain data to enhance understanding of decentralized fnance mechanisms.",
       ],
     },
   ];
@@ -228,7 +240,27 @@ import {
       image: personalweb,
       source_code_link: "https://github.com/zorourke14/PersonalWebsite",
     },
+    {
+      name: "LeetCode AI Assistant",
+      description:
+        "Developed a LeetCode AI Assistant using OpenAI's GPT-4o fine tuned model to assist users in solving coding problems. The assistant provides hints, explanations, and code suggestions based on user queries.",
+      tags: [
+        {
+          name: "python",
+          color: "blue-text-gradient",
+        },
+        {
+          name: "openai",
+          color: "green-text-gradient",
+        },
+        {
+          name: "node",
+          color: "pink-text-gradient",
+        },
+      ],
+      image: ai,
+      source_code_link: "https://github.com/zorourke14/AI-Project",
+    },
   ];
   
   export { services, technologies, experiences, testimonials, projects, headshot };
-  

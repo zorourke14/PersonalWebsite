@@ -48,14 +48,16 @@ const About = () => {
         variants = {fadeIn("", "", .1, 1)}
         className = "mt-4 text-secondary text-[17px] max-w-3xl leading-[30px]"
         >
-          I am currently pursuing a major in Computer Science with a minor in Finance at TCNJ. My academic journey has equipped me with a strong foundation in both technical and financial principles. I am passionate about leveraging my skills in AWS, Blockchain, and Cryptocurrency to build innovative solutions and drive technological advancements.
-I am actively involved in the HackTCNJ eboard as Vice President, where I contribute to organizing our annual Hackathon event. I am also apart of DIGIT.ALL, a diversity and inclusive group that organizes events to bring together a community with a passion for tech.
-
-In addition to my technical pursuits, I enjoy hiking, fishing, and experimenting with cooking.
-
-I am excited about the opportunity to apply my diverse interests and skills to contribute to meaningful projects and collaborate with like-minded professionals in the tech industry.
+       I'm currently studying Computer Science with a minor in Finance at TCNJ, and I'm on track to graduate in Spring 2026. Over time, I've developed a strong interest in cloud technologies and DevOps.
+       <br /><br />
+       I'm especially drawn to cloud focused roles where I can work with tools. I actually built this personal website to both showcase my work and sharpen my DevOps skills—using Amazon EKS, Terraform, and Kubernetes to deploy and manage it. That hands-on experience gave me a deeper appreciation for scalable, cloud-native solutions.
+       <br /><br />
+       As President of HackTCNJ, I help lead the planning and execution of our annual hackathon, which brings together students passionate about building and learning. I'm also involved with DIGIT.ALL, a diversity and inclusion group on campus that creates spaces for tech-minded students from all backgrounds to connect and grow.
+       <br /><br />
+       Outside of tech, I like to unplug with hiking, fishing, and trying out new recipes in the kitchen.
+       <br /><br />
+       I'm excited about the chance to apply my cloud skills and wide range of interests to projects that make a real impact, and to collaborate with others who are just as passionate about tech as I am.
       </motion.p>
-
       <motion.div variants={fadeIn("left", "spring", headshot * 0.5, 0.75)} className="mt-20 flex justify-center">
         <div className="w-80 h-80 rounded-full overflow-hidden">
           <img src= {headshot} alt="Profile" className="w-full h-full object-cover" />

@@ -24,13 +24,16 @@ import threejs from "./tech/threejs.svg";
 
 import pseg from "./company/pseg.png";
 import tcnj from "./company/tcnj.png";
+import tiffany from "./company/tiff.png";
 
 import goat from "./goat.png";
 import personalweb from "./personalweb.png";
+import ai from "./ai.png";
 import tripguide from "./tripguide.png";
 
 export {
   logo,
+  ai,
   backend,
   creator,
   headshot,
@@ -54,6 +57,7 @@ export {
   threejs,
   pseg,
   tcnj,
+  tiffany,
   goat,
   personalweb,
   tripguide,

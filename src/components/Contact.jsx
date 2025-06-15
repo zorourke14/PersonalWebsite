@@ -34,7 +34,6 @@ const Contact = () => {
 
     emailjs
       .send(
-        '',
         config.EMAILJS_SERVICE_ID,
         config.EMAILJS_TEMPLATE_ID,
         {
@@ -45,7 +44,6 @@ const Contact = () => {
           message: form.message,
         },
         config.EMAILJS_PUBLIC_KEY
-        
       )
       .then(
         () => {
