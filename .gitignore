@@ -22,3 +22,28 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+
+# Ignore Terraform state files
+terraform.tfstate
+terraform.tfstate.backup
+
+# Ignore Terraform variable files with sensitive data
+*.tfvars
+*.tfvars.json
+
+# Ignore the .terraform directory (contains provider plugins and cache)
+.terraform/
+.terraform.lock.hcl
+
+# Ignore crash logs
+crash.log
+
+# Ignore any local override files
+override.tf
+override.tf.json
+*_override.tf
+*_override.tf.json
+
+# Ignore sensitive SSH keys (if stored locally)
+*.pem
+*.key
