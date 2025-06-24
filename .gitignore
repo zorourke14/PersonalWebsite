@@ -47,3 +47,6 @@ override.tf.json
 # Ignore sensitive SSH keys (if stored locally)
 *.pem
 *.key
+
+# Notes
+notes.txt
