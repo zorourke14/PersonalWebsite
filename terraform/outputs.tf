@@ -12,3 +12,8 @@ output "vcn_cidr" {
   description = "CIDR block of the VCN"
   value       = oci_core_vcn.portfolio_vcn.cidr_block
 }
+
+output "portfolio_instance_public_ip" {
+  description = "Public IP address of the portfolio instance"
+  value       = oci_core_instance.portfolio_instance.public_ip
+}

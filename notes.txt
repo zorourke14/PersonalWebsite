@@ -55,3 +55,5 @@ Key Achievements
 • Professional Development Environment: Mirrors production architecture • Scalability: From 1 to N instances with one command • Security: Application protected behind reverse proxy • Performance: Optimized static file serving and connection handling • Maintainability: Clean separation of concerns between web server and application • Industry Standards: Following best practices used by major companies
 
 Your portfolio website is now built with the same architectural pat
+
+ssh -i ~/.ssh/oci-portfolio-key opc@132.145.217.213
