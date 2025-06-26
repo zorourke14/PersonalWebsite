@@ -2,7 +2,7 @@
 
 Welcome to my 3D Developer Portfolio project! This portfolio showcases my skills in using modern technologies, deployed with enterprise-grade DevOps practices and cloud infrastructure. 
 
-## ⚙️ Tech Stack
+## Tech Stack
 
 - **React.js**: For building dynamic user interfaces.
 - **Three.js**: For creating and rendering 3D graphics.
@@ -10,7 +10,7 @@ Welcome to my 3D Developer Portfolio project! This portfolio showcases my skills
 - **Vite**: For a fast development environment.
 - **Tailwind CSS**: For utility-first styling and responsive design.
 
-## 🚀 DevOps & Cloud Infrastructure
+## DevOps & Cloud Infrastructure
 
 This portfolio demonstrates production-ready DevOps practices and cloud engineering skills:
 
@@ -18,6 +18,13 @@ This portfolio demonstrates production-ready DevOps practices and cloud engineer
 - **Terraform**: Complete infrastructure provisioning on Oracle Cloud Infrastructure (OCI)
 - **Docker & Docker Compose**: Containerized application with multi-service orchestration
 - **Nginx**: Production reverse proxy with SSL termination and security configurations
+
+### CI/CD Pipeline
+- **GitHub Actions**: Automated build and deployment pipeline triggered on every push to main
+- **Continuous Integration**: Automated dependency installation, build validation, and testing
+- **Continuous Deployment**: Secure SSH deployment to OCI instance with zero-downtime container orchestration
+- **Build Optimization**: NPM caching and optimized Docker builds for faster deployment cycles
+- **Environment Management**: Production environment protection with encrypted secrets management
 
 ### Cloud Architecture
 - **Oracle Cloud Infrastructure**: Cost-effective cloud deployment with VPC, security groups, and compute instances
@@ -28,14 +35,16 @@ This portfolio demonstrates production-ready DevOps practices and cloud engineer
 - **Reverse Proxy Configuration**: Nginx handling SSL termination and load balancing capabilities
 - **Container Orchestration**: Docker Compose managing application and proxy services
 - **Security Hardening**: Firewall rules, SSH key authentication, and minimal attack surface
-- **Automated Deployments**: Infrastructure as code (IaC) ensuring reproducible environments
+- **Automated Deployments**: Full CI/CD pipeline from code push to production deployment
+- **Zero-Downtime Updates**: Rolling container updates with health checks
 
 ### Architecture Overview
 ```
+Developer Push → GitHub Actions → Build & Test → SSH Deploy → OCI Instance → Docker Compose → Live Website
 Internet → Domain (zack-orourke.com) → OCI Public IP → Nginx (SSL) → Dockerized React App
 ```
 
-The deployment showcases enterprise-level practices including infrastructure automation, containerization, security best practices, and scalable cloud architecture - all implemented cost-effectively using modern DevOps tools.
+The deployment showcases enterprise-level practices including automated CI/CD pipelines, infrastructure automation, containerization, security best practices, and scalable cloud architecture - all implemented cost-effectively using modern DevOps tools.
 
 ## Weblink
 
