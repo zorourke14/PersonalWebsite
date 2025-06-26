@@ -48,15 +48,13 @@ const About = () => {
         variants = {fadeIn("", "", .1, 1)}
         className = "mt-4 text-secondary text-[17px] max-w-3xl leading-[30px]"
         >
-       I'm currently studying Computer Science with a minor in Finance at TCNJ, and I'm on track to graduate in Spring 2026. Over time, I've developed a strong interest in cloud technologies and DevOps.
+       I'm currently studying Computer Science with a minor in Finance at TCNJ, and I'm on track to graduate in Spring 2026. Over time, I've developed a strong interest in Cloud technologies and DevOps.
        <br /><br />
-       I'm especially drawn to cloud focused roles where I can work with tools. I actually built this personal website to both showcase my work and sharpen my DevOps skills—using Amazon EKS, Terraform, and Kubernetes to deploy and manage it. That hands-on experience gave me a deeper appreciation for scalable, cloud-native solutions.
+       I'm especially drawn to Cloud focused roles where I can work with modern technologies that solve real-world problems. I actually built this personal website to both showcase my work and sharpen my DevOps skills—using technologies like Docker, Terraform, and GitHub Actions to deploy and manage it.
        <br /><br />
-       As President of HackTCNJ, I help lead the planning and execution of our annual hackathon, which brings together students passionate about building and learning. I'm also involved with DIGIT.ALL, a diversity and inclusion group on campus that creates spaces for tech-minded students from all backgrounds to connect and grow.
+       I'm actively involved in extracurriculars at TCNJ. As President of HackTCNJ, I help lead the planning and execution of our annual hackathon, which brings together students passionate about building and learning. I'm also involved with DIGIT.ALL, a diversity and inclusion group on campus that creates spaces for tech-minded students from all backgrounds to connect and grow.
        <br /><br />
-       Outside of tech, I like to unplug with hiking, fishing, and trying out new recipes in the kitchen.
-       <br /><br />
-       I'm excited about the chance to apply my cloud skills and wide range of interests to projects that make a real impact, and to collaborate with others who are just as passionate about tech as I am.
+       I'm looking for a role where I can leverage my technical skills and interests to contribute to meaningful projects, while working alongside a supportive team of skilled professionals.
       </motion.p>
       <motion.div variants={fadeIn("left", "spring", headshot * 0.5, 0.75)} className="mt-20 flex justify-center">
         <div className="w-80 h-80 rounded-full overflow-hidden">

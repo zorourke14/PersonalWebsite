@@ -144,8 +144,8 @@ import {
       iconBg: "#E6DEDD",
       date: "August 2023 - June 2024",
       points: [
-        "Facilitate the progress of 30 students during laboratory sessions, applying critical problem-solving skills during labs and projects.",
-        "Teach students object-oriented programming skills and hold private office hours outside of lab hours",
+        "Facilitated the progress of 30 students during laboratory sessions, applying critical problem-solving skills during labs and projects.",
+        "Taught students object-oriented programming skills and held private office hours outside of lab hours",
       ],
     },
     {
@@ -155,9 +155,9 @@ import {
       iconBg: "#E6DEDD",
       date: "August 2023 - June 2024",
       points: [
-        "Researching crypto slashing for publication under Dr. Jikai Li’s guidance.",
-        "Implementing smart contracts with Solidity and extracting data from light nodes.",
-        "Analyzing blockchain data to enhance understanding of decentralized fnance mechanisms.",
+        "Researched crypto slashing for publication under Dr. Jikai Li’s guidance.",
+        "Implemented smart contracts with Solidity and extracting data from light nodes.",
+        "Analyzed blockchain data to enhance understanding of decentralized finance mechanisms.",
       ],
     },
   ];
