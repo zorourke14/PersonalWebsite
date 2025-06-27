@@ -8,7 +8,7 @@ import { fadeIn, textVariant } from "../utils/motion";
 const Resume = () => {
   const handleDownload = () => {
     const link = document.createElement("a");
-    link.href = "/PersonalWebsite/Zack_ORourke_25-26.pdf";
+    link.href = "https://zack-orourke.com/Zack_ORourke_25-26.pdf";
     link.download = "Resume.pdf";
     document.body.appendChild(link);
     link.click();
@@ -16,7 +16,7 @@ const Resume = () => {
   };
 
   const handleView = () => {
-    window.open("/PersonalWebsite/Zack_ORourke_25-26.pdf", "_blank");
+    window.open("https://zack-orourke.com/Zack_ORourke_25-26.pdf", "_blank");
   };
 
   return (
