@@ -20,10 +20,11 @@ This portfolio demonstrates production-ready DevOps practices and cloud engineer
 - **Nginx**: Production reverse proxy with SSL termination and security configurations
 
 ### CI/CD Pipeline
-- **GitHub Actions**: Automated build and deployment pipeline triggered on every push to main
-- **Continuous Integration**: Automated dependency installation, build validation, and testing
-- **Continuous Deployment**: Secure SSH deployment to OCI instance with zero-downtime container orchestration
-- **Build Optimization**: NPM caching and optimized Docker builds for faster deployment cycles
+- **Jenkins**: Containerized CI server with pipeline automation and multi-stage build capabilities
+- **GitHub Actions**: Continuous deployment pipeline with secure SSH deployment to production
+- **Pipeline as Code**: Jenkinsfile-based build automation demonstrating industry-standard practices
+- **Hybrid CI/CD Architecture**: Separated CI (Jenkins) and CD (GitHub Actions) for scalable pipeline design
+- **Build Orchestration**: Docker Compose managing application, proxy, and CI/CD infrastructure services
 - **Environment Management**: Production environment protection with encrypted secrets management
 
 ### Cloud Architecture
@@ -33,18 +34,17 @@ This portfolio demonstrates production-ready DevOps practices and cloud engineer
 
 ### Production Features
 - **Reverse Proxy Configuration**: Nginx handling SSL termination and load balancing capabilities
-- **Container Orchestration**: Docker Compose managing application and proxy services
+- **Container Orchestration**: Docker Compose managing application, proxy, and CI/CD services
 - **Security Hardening**: Firewall rules, SSH key authentication, and minimal attack surface
-- **Automated Deployments**: Full CI/CD pipeline from code push to production deployment
-- **Zero-Downtime Updates**: Rolling container updates with health checks
+- **CI/CD Integration**: Jenkins pipeline framework ready for automated testing and quality gates
 
 ### Architecture Overview
 ```
-Developer Push → GitHub Actions → Build & Test → SSH Deploy → OCI Instance → Docker Compose → Live Website
+Developer Push → Jenkins (CI: Build/Validate) → GitHub Actions (CD: Deploy) → OCI Instance → Live Website
 Internet → Domain (zack-orourke.com) → OCI Public IP → Nginx (SSL) → Dockerized React App
 ```
 
-The deployment showcases enterprise-level practices including automated CI/CD pipelines, infrastructure automation, containerization, security best practices, and scalable cloud architecture - all implemented cost-effectively using modern DevOps tools.
+The deployment showcases enterprise-level practices including separated CI/CD responsibilities, infrastructure automation, containerization, security best practices, and scalable cloud architecture. The Jenkins implementation demonstrates understanding of modern CI/CD tooling and pipeline design patterns used in production environments.
 
 ## Weblink
 
