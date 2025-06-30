@@ -209,11 +209,11 @@ import {
         },
         {
           name: "chart.js",
-          color: "blue-text-gradient",
+          color: "green-text-gradient",
         },
         {
           name: "postgreSQL",
-          color: "green-text-gradient",
+          color: "orange-text-gradient",
         },
         {
           name: "html",
@@ -230,7 +230,7 @@ import {
     {
       name: "Personal Website",
       description:
-        "Developed personal website to practice web development skills and put AWS Cloud Practitioner Certificate to use by deploying it through AWS services.",
+        "Developed personal website to practice DevOps skills and put AWS Cloud Practitioner Certificate to use by implementing cloud-native architecture with containerized deployment, CI/CD automation, and IaC using Docker, GitHub Actions, and Oracle Cloud Infrastructure.",
       tags: [
         {
           name: "react",
@@ -238,11 +238,27 @@ import {
         },
         {
           name: "three.js",
-          color: "green-text-gradient",
+          color: "orange-text-gradient",
         },
         {
           name: "tailwind",
           color: "pink-text-gradient",
+        },
+        {
+          name: "docker",
+          color: "blue-text-gradient",
+        },
+        {
+          name: "terraform",
+          color: "green-text-gradient",
+        },
+        {
+          name: "oci",
+          color: "orange-text-gradient",
+        },
+        {
+          name: "github actions",
+          color: "green-text-gradient",
         },
       ],
       image: personalweb,
