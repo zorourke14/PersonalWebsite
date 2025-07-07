@@ -1,0 +1,45 @@
+---
+# Application repository settings
+app_repo_url: "https://github.com/zorourke14/PersonalWebsite.git"
+app_directory: "/home/opc/PersonalWebsite"
+app_branch: "main"
+
+# Application ports to check
+app_ports:
+  - 80
+  - 443
+  - 8080
+  - 3000
+
+# Service startup settings
+service_startup_delay: 10
+service_startup_timeout: 120
+
+# Docker settings
+cleanup_old_images: true
+docker_compose_file: "docker-compose.yml"
+
+# SSL settings
+ssl_enabled: false
+domain_name: "zack-orourke.com"
+
+# Environment settings
+app_environment: "production"
+node_env: "production"
+
+# Backup settings
+backup_enabled: false
+backup_directory: "/home/opc/backups"
+
+# Maintenance settings
+maintenance_mode: false
+health_check_retries: 3
+health_check_delay: 5
+
+# Logging settings
+log_level: "info"
+enable_debug_logs: false
+
+# Security settings
+secure_headers_enabled: true
+rate_limiting_enabled: true

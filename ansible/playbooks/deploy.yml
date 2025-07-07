@@ -1,0 +1,31 @@
+---
+- name: Deploy Portfolio Application
+  hosts: portfolio_servers
+  gather_facts: no
+  
+  vars:
+    app_branch: "{{ deploy_branch | default('main') }}"
+    cleanup_old_images: true
+  
+  tasks:
+    - name: Check if Docker is running
+      systemd:
+        name: docker
+        state: started
+      become: yes
+    
+    - name: Deploy application
+      include_role:
+        name: portfolio_app
+      
+    - name: Verify deployment success
+      uri:
+        url: "http://{{ ansible_host }}"
+        method: GET
+        status_code: 200
+      retries: 5
+      delay: 10
+      
+    - name: Show deployment status
+      debug:
+        msg: "Application deployed successfully from branch: {{ app_branch }}"

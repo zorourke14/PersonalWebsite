@@ -1,0 +1,45 @@
+---
+- name: Initial Server Setup
+  hosts: portfolio_servers
+  gather_facts: yes
+  become: yes
+  
+  tasks:
+    - name: Create application user directories
+      file:
+        path: "{{ item }}"
+        state: directory
+        owner: opc
+        group: opc
+        mode: '0755'
+      loop:
+        - /home/opc/PersonalWebsite
+        - /home/opc/backups
+        - /home/opc/logs
+    
+    - name: Install essential packages
+      yum:
+        name:
+          - git
+          - curl
+          - wget
+          - unzip
+          - vim
+          - htop
+        state: present
+    
+    - name: Configure firewall
+      firewalld:
+        service: "{{ item }}"
+        permanent: yes
+        state: enabled
+        immediate: yes
+      loop:
+        - http
+        - https
+        - ssh
+      ignore_errors: yes
+    
+    - name: Setup Docker environment
+      include_role:
+        name: docker

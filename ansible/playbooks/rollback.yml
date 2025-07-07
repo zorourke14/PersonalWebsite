@@ -1,0 +1,42 @@
+---
+- name: Emergency Rollback
+  hosts: portfolio_servers
+  gather_facts: no
+  
+  vars_prompt:
+    - name: rollback_branch
+      prompt: "Enter branch/commit to rollback to"
+      private: no
+      default: "main"
+  
+  tasks:
+    - name: Stop current services
+      shell: docker-compose down
+      args:
+        chdir: /home/opc/PersonalWebsite
+      become: yes
+      become_user: opc
+    
+    - name: Rollback to specified version
+      git:
+        repo: "https://github.com/zorourke14/PersonalWebsite.git"
+        dest: /home/opc/PersonalWebsite
+        version: "{{ rollback_branch }}"
+        force: yes
+      become: yes
+      become_user: opc
+    
+    - name: Restart services
+      shell: docker-compose up -d --build
+      args:
+        chdir: /home/opc/PersonalWebsite
+      become: yes
+      become_user: opc
+    
+    - name: Verify rollback
+      uri:
+        url: "http://{{ ansible_host }}"
+        method: GET
+        status_code: 200
+      retries: 3
+      delay: 10

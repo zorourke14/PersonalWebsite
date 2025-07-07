@@ -1,0 +1,41 @@
+---
+- name: Portfolio Website Maintenance
+  hosts: portfolio_servers
+  gather_facts: yes
+  
+  vars_prompt:
+    - name: maintenance_task
+      prompt: "Select maintenance task: [backup/cleanup/restart/update]"
+      private: no
+      default: "backup"
+  
+  tasks:
+    - name: Create backup
+      shell: |
+        mkdir -p /home/opc/backups/$(date +%Y%m%d_%H%M%S)
+        docker-compose -f /home/opc/PersonalWebsite/docker-compose.yml down
+        tar -czf /home/opc/backups/$(date +%Y%m%d_%H%M%S)/portfolio_backup.tar.gz \
+          /home/opc/PersonalWebsite
+        docker-compose -f /home/opc/PersonalWebsite/docker-compose.yml up -d
+      when: maintenance_task == "backup"
+      become: yes
+    
+    - name: Clean up Docker resources
+      shell: |
+        docker system prune -f
+        docker volume prune -f
+        docker image prune -f
+      when: maintenance_task == "cleanup"
+      become: yes
+    
+    - name: Restart all services
+      shell: |
+        cd /home/opc/PersonalWebsite
+        docker-compose restart
+      when: maintenance_task == "restart"
+      become: yes
+    
+    - name: Update application
+      include_role:
+        name: portfolio_app
+      when: maintenance_task == "update"

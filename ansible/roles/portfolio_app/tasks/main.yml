@@ -1,0 +1,80 @@
+---
+- name: Create application directory
+  file:
+    path: "{{ app_directory }}"
+    state: directory
+    owner: "{{ ansible_user }}"
+    group: "{{ ansible_user }}"
+    mode: '0755'
+  become: yes
+
+- name: Clone portfolio repository
+  git:
+    repo: "{{ app_repo_url }}"
+    dest: "{{ app_directory }}"
+    version: "{{ app_branch }}"
+    force: yes
+  become: yes
+  become_user: "{{ ansible_user }}"
+
+- name: Create necessary directories
+  file:
+    path: "{{ item }}"
+    state: directory
+    owner: "{{ ansible_user }}"
+    group: "{{ ansible_user }}"
+    mode: '0755'
+  loop:
+    - "/etc/letsencrypt"
+    - "{{ app_directory }}/ansible"
+    - "{{ app_directory }}/terraform"
+  become: yes
+
+- name: Stop existing containers
+  shell: docker-compose down
+  args:
+    chdir: "{{ app_directory }}"
+  ignore_errors: yes
+  become: yes
+  become_user: "{{ ansible_user }}"
+
+- name: Remove old images (cleanup)
+  shell: docker image prune -f
+  become: yes
+  become_user: "{{ ansible_user }}"
+  when: cleanup_old_images | default(true)
+
+- name: Pull latest images
+  shell: docker-compose pull
+  args:
+    chdir: "{{ app_directory }}"
+  become: yes
+  become_user: "{{ ansible_user }}"
+  ignore_errors: yes
+
+- name: Build and start containers
+  shell: docker-compose up -d --build
+  args:
+    chdir: "{{ app_directory }}"
+  become: yes
+  become_user: "{{ ansible_user }}"
+  notify: 
+    - verify deployment
+    - check container health
+    - wait for nginx
+    - wait for jenkins
+
+- name: Wait for services to be ready
+  wait_for:
+    port: "{{ item }}"
+    delay: "{{ service_startup_delay }}"
+    timeout: "{{ service_startup_timeout }}"
+  loop: "{{ app_ports }}"
+  ignore_errors: yes
+
+- name: Display service URLs
+  debug:
+    msg:
+      - "Portfolio Website: http://{{ ansible_host }}"
+      - "Jenkins: http://{{ ansible_host }}:8080"
+      - "HTTPS (if configured): https://{{ ansible_host }}"

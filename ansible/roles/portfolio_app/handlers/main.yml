@@ -1,0 +1,47 @@
+---
+- name: verify deployment
+  uri:
+    url: "http://localhost"
+    method: GET
+    status_code: 200
+  retries: 3
+  delay: 10
+
+- name: restart docker services
+  shell: docker-compose restart
+  args:
+    chdir: "{{ app_directory }}"
+  become: yes
+  become_user: "{{ ansible_user }}"
+
+- name: check container health
+  shell: docker-compose ps
+  args:
+    chdir: "{{ app_directory }}"
+  register: container_status
+  become: yes
+  become_user: "{{ ansible_user }}"
+
+- name: display container status
+  debug:
+    var: container_status.stdout_lines
+
+- name: wait for nginx
+  wait_for:
+    port: 80
+    delay: 5
+    timeout: 30
+
+- name: wait for jenkins
+  wait_for:
+    port: 8080
+    delay: 10
+    timeout: 60
+
+- name: verify ssl certificate
+  uri:
+    url: "https://{{ ansible_host }}"
+    method: GET
+    validate_certs: yes
+  ignore_errors: yes
+  when: ssl_enabled | default(false)

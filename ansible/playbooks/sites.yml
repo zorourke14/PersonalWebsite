@@ -1,0 +1,37 @@
+---
+- name: Complete Portfolio Infrastructure Setup
+  hosts: portfolio_servers
+  gather_facts: yes
+  become: yes
+  
+  pre_tasks:
+    - name: Update system packages
+      yum:
+        name: "*"
+        state: latest
+      when: update_system_packages | default(true)
+    
+    - name: Ensure firewall allows required ports
+      firewalld:
+        port: "{{ item }}/tcp"
+        permanent: yes
+        state: enabled
+        immediate: yes
+      loop:
+        - 80
+        - 443
+        - 8080
+      ignore_errors: yes
+
+  roles:
+    - docker
+    - portfolio_app
+  
+  post_tasks:
+    - name: Display deployment summary
+      debug:
+        msg:
+          - "=== Portfolio Website Deployment Complete ==="
+          - "Website URL: http://{{ ansible_host }}"
+          - "Jenkins URL: http://{{ ansible_host }}:8080"
+          - "SSH Access: ssh opc@{{ ansible_host }}"
