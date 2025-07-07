@@ -35,20 +35,6 @@ services:
     user: root
     restart: unless-stopped
 
-  ansible:
-    image: ansible/ansible:latest
-    volumes:
-      - ./ansible:/ansible
-      - ~/.ssh:/root/.ssh:ro
-      - /var/run/docker.sock:/var/run/docker.sock
-    working_dir: /ansible
-    command: ["sleep", "infinity"]
-    restart: unless-stopped
-    depends_on:
-      - portfolio
-      - nginx
-      - jenkins
-
 volumes:
   nginx-logs:
   jenkins_home:
