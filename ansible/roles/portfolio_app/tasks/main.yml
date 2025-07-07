@@ -31,21 +31,15 @@
   become: yes
 
 - name: Stop existing containers
-  shell: docker-compose down
+  shell: docker compose down       
   args:
     chdir: "{{ app_directory }}"
   ignore_errors: yes
   become: yes
   become_user: "{{ ansible_user }}"
 
-- name: Remove old images (cleanup)
-  shell: docker image prune -f
-  become: yes
-  become_user: "{{ ansible_user }}"
-  when: cleanup_old_images | default(true)
-
 - name: Pull latest images
-  shell: docker-compose pull
+  shell: docker compose pull      
   args:
     chdir: "{{ app_directory }}"
   become: yes
@@ -53,7 +47,7 @@
   ignore_errors: yes
 
 - name: Build and start containers
-  shell: docker-compose up -d --build
+  shell: docker compose up -d --build    
   args:
     chdir: "{{ app_directory }}"
   become: yes

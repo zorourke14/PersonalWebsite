@@ -12,6 +12,7 @@
       - device-mapper-persistent-data
       - lvm2
       - git
+      - python3-pip
     state: present
   become: yes
 
@@ -31,11 +32,10 @@
   become: yes
   notify: start docker
 
-- name: Install Docker Compose
-  get_url:
-    url: "https://github.com/docker/compose/releases/download/{{ docker_compose_version }}/docker-compose-Linux-x86_64"
-    dest: /usr/local/bin/docker-compose
-    mode: '0755'
+- name: Install Docker Compose plugin
+  yum:
+    name: docker-compose-plugin
+    state: present
   become: yes
 
 - name: Add user to docker group

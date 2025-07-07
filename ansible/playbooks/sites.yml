@@ -24,14 +24,14 @@
       ignore_errors: yes
 
   roles:
-    - docker
-    - portfolio_app
+    - role: ../roles/docker
+    - role: ../roles/portfolio_app
   
   post_tasks:
     - name: Display deployment summary
       debug:
         msg:
           - "=== Portfolio Website Deployment Complete ==="
-          - "Website URL: http://{{ ansible_host }}"
+          - "Website URL: https://{{ ansible_host }}"
           - "Jenkins URL: http://{{ ansible_host }}:8080"
           - "SSH Access: ssh opc@{{ ansible_host }}"

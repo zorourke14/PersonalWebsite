@@ -8,14 +8,14 @@
   delay: 10
 
 - name: restart docker services
-  shell: docker-compose restart
+  shell: docker compose restart
   args:
     chdir: "{{ app_directory }}"
   become: yes
   become_user: "{{ ansible_user }}"
 
 - name: check container health
-  shell: docker-compose ps
+  shell: docker compose ps
   args:
     chdir: "{{ app_directory }}"
   register: container_status
