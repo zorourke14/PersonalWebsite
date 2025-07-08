@@ -260,6 +260,10 @@ import {
           name: "github actions",
           color: "green-text-gradient",
         },
+        {
+          name: "ansible",
+          color: "pink-text-gradient",
+        },
       ],
       image: personalweb,
       source_code_link: "https://github.com/zorourke14/PersonalWebsite",
