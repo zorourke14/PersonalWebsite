@@ -127,7 +127,11 @@ import {
       iconBg: "#97cacc",
       date: "June 2025 - August 2025",
       points: [
-        "To be completed",
+        "Provisioned 10+ Azure managed instances and Kubernetes clusters using Terraform ensuring consistent infrastructure across dev/QA environments.",
+        "Developed automated Azure VM inventory management system using Python and pandas to audit 200+ virtual machines, generating compliance reports that identified USD $1K in potential monthly cost savings.",
+        "Presented cost optimization findings to engineering leadership, translating technical analysis into actionable recommendations and influencing cloud spend strategy.",
+        "Collaborated with FinOps team to identify and remediate inefficient cloud resources, conducting analysis that uncovered 10+ underutilized servers and coordinated with 5 application teams to implement automated start/stop scheduling.",
+        "Integrated Azure Cost Management APIs to build automated budget monitoring and alerting system, providing real-time spending notifications that prevented budget overruns across 5 business units.",
       ],
     },
     {
